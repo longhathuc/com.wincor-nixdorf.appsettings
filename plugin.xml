@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.wincor-nixdorf.appsettings" 
+        version="2.0" 
+        xmlns="http://apache.org/cordova/ns/plugins/1.0">
+	<name>AppSettings</name>
+    <description>MPOS AppSettings Plugin</description>
+    <license>Apache 2.0 License</license>
+    <keywords>settings,app</keywords>       
+    <engines>
+		<engine name="cordova" version="3.3.0"/>
+    </engines>
+    
+    <platform name="ios">
+    	<js-module src="www/appsettings.js" name="Appsettings">
+       		 <clobbers target="appsettings" />
+ 	   	</js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="AppSettings">
+                <param name="ios-package" value="AppSettings"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/AppSettings.h"/>
+        <source-file src="src/ios/AppSettings.m"/>
+    </platform>
+</plugin>
